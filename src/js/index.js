@@ -1,21 +1,16 @@
 //import react into the bundle
 import React from "react";
 import ReactDOM from "react-dom";
-
-// include your styles into the webpack bundle
+// import './icons.js';
+//include your styles into the webpack bundle
 import "../styles/index.css";
+import Home from "./component/home";
 
 //import your own components
-function SimpleCounter (props) {
-    return (<div class="bigCounter">
-<div></div>
-<div class="calandar"></div>
-<div class="fourthDigit"></div>
-<div class="thirdDigit"></div>
-<div class="secondDigit"></div>
-<div class="firstDigit"></div>
-    </div>)
-}
+let seconds=0;
+setInterval(()=>{
+    seconds++;
+    ReactDOM.render(<Home seconds={seconds} />, document.querySelector("#app"));
+})
 
 //render your react application
-ReactDOM.render(<SimpleCounter />, document.querySelector("#app"));
